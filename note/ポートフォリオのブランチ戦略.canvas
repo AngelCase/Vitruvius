@@ -1,0 +1,17 @@
+{
+	"nodes":[
+		{"type":"text","text":"production","id":"cb02f60caa7a4a47","x":-380,"y":-375,"width":160,"height":50,"color":"4"},
+		{"type":"text","text":"master","id":"75d3327b1cf0139a","x":-540,"y":-375,"width":120,"height":50,"color":"4"},
+		{"type":"text","text":"GitHub Pages（一般公開！）","id":"4f656a6364412cb8","x":60,"y":-375,"width":280,"height":50,"color":"2"},
+		{"type":"text","text":"gh-pages","id":"ff3c81478a1604d4","x":-150,"y":-375,"width":140,"height":50,"color":"4"},
+		{"type":"text","text":"【GitHub Actions】\nproductionへの\npushをトリガに\ngh-pagesへ\n自動merge","id":"11ed5f0b969fe128","x":-380,"y":-580,"width":220,"height":162},
+		{"type":"text","text":"【GitHub Pages】\ngh-pagesへの\npushをトリガに \n自動でビルド・デプロイ","id":"f7735a7a80fa77e1","x":-130,"y":-580,"width":240,"height":162}
+	],
+	"edges":[
+		{"id":"588176a6efe324e7","fromNode":"75d3327b1cf0139a","fromSide":"right","toNode":"cb02f60caa7a4a47","toSide":"left"},
+		{"id":"1af03f8b4c19383c","fromNode":"ff3c81478a1604d4","fromSide":"right","toNode":"4f656a6364412cb8","toSide":"left"},
+		{"id":"15deb9f5e4a78674","fromNode":"cb02f60caa7a4a47","fromSide":"right","toNode":"ff3c81478a1604d4","toSide":"left"},
+		{"id":"3fd96862939efc72","fromNode":"11ed5f0b969fe128","fromSide":"bottom","toNode":"cb02f60caa7a4a47","toSide":"top","toEnd":"none"},
+		{"id":"c313afeb35c42b1a","fromNode":"f7735a7a80fa77e1","fromSide":"bottom","toNode":"ff3c81478a1604d4","toSide":"top","toEnd":"none"}
+	]
+}

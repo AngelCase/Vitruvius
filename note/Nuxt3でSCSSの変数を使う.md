@@ -1,0 +1,1 @@
+[nuxt.js - How to use global SASS variables in my Nuxt 3 components - Stack Overflow](https://stackoverflow.com/questions/71540998/how-to-use-global-sass-variables-in-my-nuxt-3-components)

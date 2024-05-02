@@ -1,0 +1,2 @@
+![[CookieとWebStrage.PNG]]
+[[LocalStorage]]

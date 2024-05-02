@@ -1,0 +1,1 @@
+[console.time()で非同期処理の所要時間を計測する #JavaScript - Qiita](https://qiita.com/nakajmg/items/a3bede2778dacf8ab67d)
