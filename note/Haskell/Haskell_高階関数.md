@@ -51,7 +51,7 @@ ghci> multWithEighteen 10
 ```
 このような、関数のとるパラメータのうち一部のパラメータを渡すことを「部分適用」という。
 
-## infix functionでの部分適用
+## セクション
 infix functionで部分適用する場合、「セクション」を使う。
 セクションを使うにはパラメータを1つだけ適用した関数を括弧で囲う：
 ```haskell
@@ -65,12 +65,16 @@ divideByTen 200
 (/10) 200
 ```
 
-Calling, say, divideByTen 200 is equivalent to doing 200 / 10, as is doing (/10) 200. A function that checks if a character supplied to it is an uppercase letter:
-
+別の例として、与えられた文字が大文字化をチェックする関数は以下のように書ける：
+```haskell
 isUpperAlphanum :: Char -> Bool
 isUpperAlphanum = (`elem` ['A'..'Z'])
+```
 
-The only special thing about sections is using -. From the definition of sections, (-4) would result in a function that takes a number and subtracts 4 from it. However, for convenience, (-4) means minus four. So if you want to make a function that subtracts 4 from the number it gets as a parameter, partially apply the subtract function like so: (subtract 4).
+セクションに関してただ一つ注意すべきは`-`の扱いである。
+セクションの定義からいくと、`(-4)`は`4`を引く関数であるように思われるが、
+`(-4)`はマイナス4を意味する。
+もし、`4`を引く関数を作りたいなら`(subtract 4)`のように書く。
 
 What happens if we try to just do multThree 3 4 in GHCI instead of binding it to a name with a _let_ or passing it to another function?
 
