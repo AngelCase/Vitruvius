@@ -30,7 +30,7 @@
 [[Haskell_再帰]]
 
 ## 6. Higher Order Functions
-[[Haskell_]]
+[[Haskell_高階関数]]
 
 ここから
 [Higher Order Functions - Learn You a Haskell for Great Good!](https://learnyouahaskell.com/higher-order-functions)
