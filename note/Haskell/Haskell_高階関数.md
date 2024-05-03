@@ -49,19 +49,8 @@ ghci> let multWithEighteen = multTwoWithNine 2
 ghci> multWithEighteen 10
 180
 ```
+このような、関数のとるパラメータのうち一部のパラメータを渡すことを「部分適用」という。
 
-
-compareWithHundred :: (Num a, Ord a) => a -> Ordering
-compareWithHundred x = compare 100 x
-
-If we call it with 99, it returns a GT. Simple stuff. Notice that the x is on the right hand side on both sides of the equation. Now let's think about what compare 100 returns. It returns a function that takes a number and compares it with 100. Wow! Isn't that the function we wanted? We can rewrite this as:
-
-compareWithHundred :: (Num a, Ord a) => a -> Ordering
-compareWithHundred = compare 100
-
-The type declaration stays the same, because compare 100 returns a function. Compare has a type of (Ord a) => a -> (a -> Ordering) and calling it with 100 returns a (Num a, Ord a) => a -> Ordering. The additional class constraint sneaks up there because 100 is also part of the Num typeclass.
-
-_Yo!_ Make sure you really understand how curried functions and partial application work because they're really important!
 
 Infix functions can also be partially applied by using sections. To section an infix function, simply surround it with parentheses and only supply a parameter on one side. That creates a function that takes one parameter and then applies it to the side that's missing an operand. An insultingly trivial function:
 
