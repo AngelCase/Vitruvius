@@ -88,8 +88,3 @@ ghci> multThree 3 4
 
 GHCI is telling us that the expression produced a function of type a -> a but it doesn't know how to print it to the screen. Functions aren't instances of the Show typeclass, so we can't get a neat string representation of a function. When we do, say, 1 + 1 at the GHCI prompt, it first calculates that to 2 and then calls show on 2 to get a textual representation of that number. And the textual representation of 2 is just the string "2", which then gets printed to our screen.
 
-## Some higher-orderism is in order
-
-Functions can take functions as parameters and also return functions. To illustrate this, we're going to make a function that takes a function and then applies it twice to something!
-
-[Higher Order Functions - Learn You a Haskell for Great Good!](https://learnyouahaskell.com/higher-order-functions)
