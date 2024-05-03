@@ -8,20 +8,18 @@ Haskellの体験そのものである。
 
 ## 
 ## Curried functions
-
-Every function in Haskell officially only takes one parameter. So how is it possible that we defined and used several functions that take more than one parameter so far?
 Haskellの関数は1つのパラメータしかとることができない。
-複数の
+これまで登場した複数のパラメータをとる関数は実はカリー化された関数である。
 
-
-Well, it's a clever trick! All the functions that accepted _several parameters_ so far have been _curried functions_. What does that mean? You'll understand it best on an example. Let's take our good friend, the max function. It looks like it takes two parameters and returns the one that's bigger. Doing max 4 5 first creates a function that takes a parameter and returns either 4 or that parameter, depending on which is bigger. Then, 5 is applied to that function and that function produces our desired result. That sounds like a mouthful but it's actually a really cool concept. The following two calls are equivalent:
-
+例えば、`max 4 5`はまず「`4`と与えられたパラメータのうち大きい方を返す関数」を返している。
+以下の2つの関数呼び出しは等価である。
+```haskell
 ghci> max 4 5
 5
 ghci> (max 4) 5
 5
+```
 
-![haskell curry](http://s3.amazonaws.com/lyah/curry.png)
 
 Putting a space between two things is simply **function application**. The space is sort of like an operator and it has the highest precedence. Let's examine the type of max. It's max :: (Ord a) => a -> a -> a. That can also be written as max :: (Ord a) => a -> (a -> a). That could be read as: max takes an a and returns (that's the ->) a function that takes an a and returns an a. That's why the return type and the parameters of functions are all simply separated with arrows.
 
