@@ -66,6 +66,7 @@
 
 ## Python
 [[Python_else]]
+[[Python_リスト内包表記]]
 
 ## Haskell
 [[Learn_You_a_Haskell_for_Great_Good!]]
