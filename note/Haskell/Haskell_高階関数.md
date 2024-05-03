@@ -33,6 +33,7 @@ max :: (Ord a) => a -> (a -> a)
 つまり、`max`は`a`をとり、`a`をとる関数を返すということである。
 これこそが関数のパラメータが矢印で区切られていた理由である。
 
+## 部分適用
 関数を返す、ということをわかりやすくするための例を示す。
 以下の関数があった時、
 ```haskell
@@ -50,11 +51,19 @@ ghci> multWithEighteen 10
 ```
 このような、関数のとるパラメータのうち一部のパラメータを渡すことを「部分適用」という。
 
-
-Infix functions can also be partially applied by using sections. To section an infix function, simply surround it with parentheses and only supply a parameter on one side. That creates a function that takes one parameter and then applies it to the side that's missing an operand. An insultingly trivial function:
-
+## infix functionでの部分適用
+infix functionで部分適用する場合、「セクション」を使う。
+セクションを使うにはパラメータを1つだけ適用した関数を括弧で囲う：
+```haskell
 divideByTen :: (Floating a) => a -> a
 divideByTen = (/10)
+```
+以下の3つは等価である：
+```haskell
+divideByTen 200
+200 / 10
+(/10) 200
+```
 
 Calling, say, divideByTen 200 is equivalent to doing 200 / 10, as is doing (/10) 200. A function that checks if a character supplied to it is an uppercase letter:
 
