@@ -34,12 +34,13 @@ max :: (Ord a) => a -> (a -> a)
 つまり、`max`は`a`をとり、`a`をとる関数を返すということである。
 これこそが関数のパラメータが矢印で区切られていた理由である。
 
-
+関数を返す、ということをわかりやすくするための例を示す。
+以下の関数があった時、
 ```haskell
 multThree :: (Num a) => a -> a -> a -> a
 multThree x y z = x * y * z
 ```
-
+以下のように使える。
 ```haskell
 ghci> let multTwoWithNine = multThree 9
 ghci> multTwoWithNine 2 3
@@ -49,8 +50,6 @@ ghci> multWithEighteen 10
 180
 ```
 
-
-By calling functions with too few parameters, so to speak, we're creating new functions on the fly. What if we wanted to create a function that takes a number and compares it to 100? We could do something like this:
 
 compareWithHundred :: (Num a, Ord a) => a -> Ordering
 compareWithHundred x = compare 100 x
