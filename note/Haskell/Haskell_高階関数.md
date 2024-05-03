@@ -75,16 +75,3 @@ isUpperAlphanum = (`elem` ['A'..'Z'])
 セクションの定義からいくと、`(-4)`は`4`を引く関数であるように思われるが、
 `(-4)`はマイナス4を意味する。
 もし、`4`を引く関数を作りたいなら`(subtract 4)`のように書く。
-
-What happens if we try to just do multThree 3 4 in GHCI instead of binding it to a name with a _let_ or passing it to another function?
-
-ghci> multThree 3 4
-<interactive>:1:0:
-    No instance for (Show (t -> t))
-      arising from a use of `print' at <interactive>:1:0-12
-    Possible fix: add an instance declaration for (Show (t -> t))
-    In the expression: print it
-    In a 'do' expression: print it
-
-GHCI is telling us that the expression produced a function of type a -> a but it doesn't know how to print it to the screen. Functions aren't instances of the Show typeclass, so we can't get a neat string representation of a function. When we do, say, 1 + 1 at the GHCI prompt, it first calculates that to 2 and then calls show on 2 to get a textual representation of that number. And the textual representation of 2 is just the string "2", which then gets printed to our screen.
-

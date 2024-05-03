@@ -31,6 +31,7 @@
 
 ## 6. Higher Order Functions
 [[Haskell_高階関数]]
+[[Haskell_]]
 
 ここから
 [Higher Order Functions - Learn You a Haskell for Great Good!](https://learnyouahaskell.com/higher-order-functions)
