@@ -6,8 +6,7 @@ Haskellの関数は関数をパラメータとしてとることができ、
 これはHaskellの体験の一部というより、
 Haskellの体験そのものである。
 
-## 
-## Curried functions
+## カリー化
 Haskellの関数は1つのパラメータしかとることができない。
 これまで登場した複数のパラメータをとる関数は実はカリー化された関数である。
 
@@ -20,8 +19,20 @@ ghci> (max 4) 5
 5
 ```
 
+空白を2つのものの間に配置するのは
+シンプルに関数の適用である。
+空白はオペレータのようなもので最高の優先順位をもつ。
 
-Putting a space between two things is simply **function application**. The space is sort of like an operator and it has the highest precedence. Let's examine the type of max. It's max :: (Ord a) => a -> a -> a. That can also be written as max :: (Ord a) => a -> (a -> a). That could be read as: max takes an a and returns (that's the ->) a function that takes an a and returns an a. That's why the return type and the parameters of functions are all simply separated with arrows.
+`max`の型は以下である：
+```haskell
+max :: (Ord a) => a -> a -> a
+```
+以下のようにも書ける：
+```haskell
+max :: (Ord a) => a -> (a -> a)
+```
+つまり、`max`は`a`をとり、`a`をとる関数を返すということである。
+これこそが関数のパラメータが矢印で区切られていた理由である。
 
 So how is that beneficial to us? Simply speaking, if we call a function with too few parameters, we get back a _partially applied_ function, meaning a function that takes as many parameters as we left out. Using partial application (calling functions with too few parameters, if you will) is a neat way to create functions on the fly so we can pass them to another function or to seed them with some data.
 
