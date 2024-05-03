@@ -35,19 +35,20 @@ max :: (Ord a) => a -> (a -> a)
 これこそが関数のパラメータが矢印で区切られていた理由である。
 
 
-Take a look at this offensively simple function:
-
+```haskell
 multThree :: (Num a) => a -> a -> a -> a
 multThree x y z = x * y * z
+```
 
-What really happens when we do multThree 3 5 9 or ((multThree 3) 5) 9? First, 3 is applied to multThree, because they're separated by a space. That creates a function that takes one parameter and returns a function. So then 5 is applied to that, which creates a function that will take a parameter and multiply it by 15. 9 is applied to that function and the result is 135 or something. Remember that this function's type could also be written as multThree :: (Num a) => a -> (a -> (a -> a)). The thing before the -> is the parameter that a function takes and the thing after it is what it returns. So our function takes an a and returns a function of type (Num a) => a -> (a -> a). Similarly, this function takes an a and returns a function of type (Num a) => a -> a. And this function, finally, just takes an a and returns an a. Take a look at this:
-
+```haskell
 ghci> let multTwoWithNine = multThree 9
 ghci> multTwoWithNine 2 3
 54
 ghci> let multWithEighteen = multTwoWithNine 2
 ghci> multWithEighteen 10
 180
+```
+
 
 By calling functions with too few parameters, so to speak, we're creating new functions on the fly. What if we wanted to create a function that takes a number and compares it to 100? We could do something like this:
 
