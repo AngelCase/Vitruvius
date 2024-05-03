@@ -34,7 +34,6 @@ max :: (Ord a) => a -> (a -> a)
 つまり、`max`は`a`をとり、`a`をとる関数を返すということである。
 これこそが関数のパラメータが矢印で区切られていた理由である。
 
-So how is that beneficial to us? Simply speaking, if we call a function with too few parameters, we get back a _partially applied_ function, meaning a function that takes as many parameters as we left out. Using partial application (calling functions with too few parameters, if you will) is a neat way to create functions on the fly so we can pass them to another function or to seed them with some data.
 
 Take a look at this offensively simple function:
 
