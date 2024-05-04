@@ -1,11 +1,17 @@
 Some higher-orderism is in order
 Functions can take functions as parameters and also return functions. To illustrate this, we're going to make a function that takes a function and then applies it twice to something!
 
+関数をとりそれを2回適用する関数をつくる。
 ```haskell
 applyTwice :: (a -> a) -> a -> a
 applyTwice f x = f (f x)
 ```
-これまで括弧は不要だったが、`->`は右結合
+これまで括弧は不要だったが、`->`は右結合なので関数を渡す都合上必要となる。
+参考：右結合は以下を満たす
+```
+A・B・C=A・(B・C)
+```
+[演算子の右結合性、左結合性とは - Panda Noir](https://www.pandanoir.info/entry/2016/06/26/115235)
 
 First of all, notice the type declaration. Before, we didn't need parentheses because -> is naturally right-associative. However, here, they're mandatory. They indicate that the first parameter is a function that takes something and returns that same thing. The second parameter is something of that type also and the return value is also of the same type. We could read this type declaration in the curried way, but to save ourselves a headache, we'll just say that this function takes two parameters and returns one thing. The first parameter is a function (of type a -> a) and the second is that same a. The function can also be Int -> Int or String -> String or whatever. But then, the second parameter to also has to be of that type.
 
