@@ -13,7 +13,6 @@ A・B・C=A・(B・C)
 ```
 [演算子の右結合性、左結合性とは - Panda Noir](https://www.pandanoir.info/entry/2016/06/26/115235)
 
-The second parameter is something of that type also and the return value is also of the same type. We could read this type declaration in the curried way, but to save ourselves a headache, we'll just say that this function takes two parameters and returns one thing. The first parameter is a function (of type a -> a) and the second is that same a. The function can also be Int -> Int or String -> String or whatever. But then, the second parameter to also has to be of that type.
 
 Note: From now on, we'll say that functions take several parameters despite each function actually taking only one parameter and returning partially applied functions until we reach a function that returns a solid value. So for simplicity's sake, we'll say that a -> a -> a takes two parameters, even though we know what's really going on under the hood.
 The body of the function is pretty simple. We just use the parameter f as a function, applying x to it by separating them with a space and then applying the result to f again. Anyway, playing around with the function:
