@@ -1,6 +1,3 @@
-Some higher-orderism is in order
-Functions can take functions as parameters and also return functions. To illustrate this, we're going to make a function that takes a function and then applies it twice to something!
-
 関数をとりそれを2回適用する関数をつくる。
 ```haskell
 applyTwice :: (a -> a) -> a -> a
@@ -13,6 +10,7 @@ A・B・C=A・(B・C)
 ```
 [演算子の右結合性、左結合性とは - Panda Noir](https://www.pandanoir.info/entry/2016/06/26/115235)
 
+実行結果：
 ```haskell
 ghci> applyTwice (+3) 10
 16
