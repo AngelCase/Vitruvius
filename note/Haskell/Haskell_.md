@@ -13,8 +13,6 @@ A・B・C=A・(B・C)
 ```
 [演算子の右結合性、左結合性とは - Panda Noir](https://www.pandanoir.info/entry/2016/06/26/115235)
 
-
-Note: From now on, we'll say that functions take several parameters despite each function actually taking only one parameter and returning partially applied functions until we reach a function that returns a solid value. So for simplicity's sake, we'll say that a -> a -> a takes two parameters, even though we know what's really going on under the hood.
 The body of the function is pretty simple. We just use the parameter f as a function, applying x to it by separating them with a space and then applying the result to f again. Anyway, playing around with the function:
 
 ghci> applyTwice (+3) 10
