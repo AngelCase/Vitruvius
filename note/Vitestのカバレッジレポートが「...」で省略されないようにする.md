@@ -7,7 +7,6 @@ Vitestでテストを書いている。
 | File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s |
 |---------------------------|---------|----------|---------|---------|-------------------|
 | All files                 | 83.26   | 78.63    | 69.42   | 83.26   |                   |
-| src                       | 0       | 0        | 0       | 0       |                   |
 | ...eComponents/FugaButton | 0       | 0        | 0       | 0       |                   |
 | index.vue                 | 0       | 0        | 0       | 0       |                   |
 ```
