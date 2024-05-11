@@ -1,4 +1,4 @@
-[[useEffect]]の
+[[useEffect]]の依存配列に空配列を渡すことで実現できる。
 ```jsx
 useEffect(() => {
   scramble(); // 一度だけ実行したい処理
