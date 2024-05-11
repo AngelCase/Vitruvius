@@ -4,6 +4,7 @@ useEffect(setup, dependencies?)
 ```
 
 `dependencies`に渡した配列の値が変わった時に`setup`が実行される。
+一方、`dependencies`を省略すると再レンダーするたびに実行される。
 
 ## 応用
 [[React_一度だけ実行する処理]]
