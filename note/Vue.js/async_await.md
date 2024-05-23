@@ -8,7 +8,7 @@ async function name() {}
 ```
 
 ## await
-関数にawaitを付けると、その関数の結果を待ってから次の処理に進む。
+awaitを付けると、Promiseが完了するのを待ってから次の処理に進む。
 また、awaitはasyncの中でのみ使える。（そのうちトップレベルでも使えるようになる）
 awaitは実質Promiseに対してthen()をしているため、Promiseのreturnする値が取得できる。
 ```js
