@@ -1,7 +1,8 @@
 [[Promise]]をわかりやすく書き換えたもの。
 
 ## async
-関数にasyncを付けると、その関数はPromiseを返すようになる。
+関数に`async`を付けると、その関数は`Promise`を返すようになる。
+明示的に何も返してなくても`Promise`オブジェクトを返す。
 そのため、非同期実行される関数となる。
 ```js
 async function name() {}
@@ -19,6 +20,36 @@ const promise = new Promise(resolve => {
 const value = await promise; // 1 秒待機
 
 console.log(value);
+```
+
+### 注意：`await`をつけても
+以下の例だと、`f1()`の中の`executeAfterWait()`の実行は待ってくれない。
+```ts
+async function executeAfterWait(x, ms) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log(x);
+      resolve();
+    }, ms);
+  })
+}
+
+async function f1(x, ms) {
+    // NOTE: ここにawaitをつけていないのでfuga→hogeの順で表示される
+	executeAfterWait(x, ms)
+}
+
+async function main() {
+  await f1("hoge", 1000);
+  console.log("fuga");
+}
+
+main();
+```
+実行結果
+```
+"fuga"
+"hoge"
 ```
 
 ## 参考
