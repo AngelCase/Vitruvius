@@ -22,7 +22,7 @@ const value = await promise; // 1 秒待機
 console.log(value);
 ```
 
-### 注意：`await`をつけても
+### 注意：正しく実装しないと`await`をつけても非同期になる
 以下の例だと、`f1()`の中の`executeAfterWait()`の実行は待ってくれない。
 ```ts
 async function executeAfterWait(x, ms) {
@@ -51,6 +51,8 @@ main();
 "fuga"
 "hoge"
 ```
+`f1()`は`undefined`を`Promise`で包んで返しており、
+`await`はその解決を待ってしまっている。
 
 ## 参考
 [Promise, async, await がやっていること (Promise と async は書き換え可能？) - Qiita](https://qiita.com/kerupani129/items/2619316d6ba0ccd7be6a#31-async-%E9%96%A2%E6%95%B0)
