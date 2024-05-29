@@ -23,7 +23,6 @@ ghci> applyTwice (multThree 2 2) 9
 ghci> applyTwice (3:) [1]
 [3,3,1]
 ```
-The awesomeness and usefulness of partial application is evident. If our function requires us to pass it a function that takes only one parameter, we can just partially apply a function to the point where it takes only one parameter and then pass it.
 
 Now we're going to use higher order programming to implement a really useful function that's in the standard library. It's called zipWith. It takes a function and two lists as parameters and then joins the two lists by applying the function between corresponding elements. Here's how we'll implement it:
 
