@@ -24,6 +24,9 @@ ghci> applyTwice (3:) [1]
 [3,3,1]
 ```
 
+## zipWith
+```haskell
+```
 Now we're going to use higher order programming to implement a really useful function that's in the standard library. It's called zipWith. It takes a function and two lists as parameters and then joins the two lists by applying the function between corresponding elements. Here's how we'll implement it:
 
 zipWith' :: (a -> b -> c) -> [a] -> [b] -> [c]
