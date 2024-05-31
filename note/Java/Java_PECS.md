@@ -41,6 +41,10 @@ public static void addNumbers(Collection<? super Integer> collection) {
     collection.add(2);
 }
 ```
+逆に、`extends`だとエラーになる。
+```java
+public static void addNumbers(Collection<? super Object> collection) {
+```
 
 ## PECS
 PECS、つまりプロデューサーextends、コンシューマーsuperで覚える。
