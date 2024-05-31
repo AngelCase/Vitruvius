@@ -51,20 +51,13 @@ ghci> zipWith' (zipWith' (*)) [[1,2,3],[3,5,6],[2,3,4]] [[3,2,2],[3,4,5],[5,4,3]
 ## flip
 関数を受け取り、2つの引数を入れ替えて返す。
 ```haskell
-flip' :: (a -> b -> c) -> (b -> a -> c)
-flip' f = g
-    where g x y = f y x
-```
-
-```haskell
 flip' :: (a -> b -> c) -> b -> a -> c
 flip' f y x = f x y
 ```
-Reading the type declaration, we say that it takes a function that takes an a and a b and returns a function that takes a b and an a. But because functions are curried by default, the second pair of parentheses is really unnecessary, because -> is right associative by default. (a -> b -> c) -> (b -> a -> c) is the same as (a -> b -> c) -> (b -> (a -> c)), which is the same as (a -> b -> c) -> b -> a -> c. We wrote that g x y = f y x. If that's true, then f y x = g x y must also hold, right? Keeping that in mind, we can define this function in an even simpler manner.
-
-Here, we take advantage of the fact that functions are curried. When we call flip' f without the parameters y and x, it will return an f that takes those two parameters but calls them flipped. Even though flipped functions are usually passed to other functions, we can take advantage of currying when making higher-order functions by thinking ahead and writing what their end result would be if they were called fully applied.
-
+実行結果
+```haskell
 ghci> flip' zip [1,2,3,4,5] "hello"
 [('h',1),('e',2),('l',3),('l',4),('o',5)]
 ghci> zipWith (flip' div) [2,2..] [10,8,6,4,2]
 [5,4,3,2,1]
+```
