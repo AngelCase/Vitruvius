@@ -41,10 +41,13 @@ public static void addNumbers(Collection<? super Integer> collection) {
     collection.add(2);
 }
 ```
-逆に、`extends`だとエラーになる。
+
+逆に、`extends Object`だと要素を追加するところでエラーになる。
 ```java
-public static void addNumbers(Collection<? super Object> collection) {
+collection.add(1); // エラー
 ```
+エラーになる理由は具体的な型がわからないから。
+`List<Number>`に`String`
 
 ## PECS
 PECS、つまりプロデューサーextends、コンシューマーsuperで覚える。
