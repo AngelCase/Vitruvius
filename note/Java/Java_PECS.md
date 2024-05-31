@@ -1,6 +1,6 @@
 引数の役割は2つあり、それぞれプロデューサーとコンシューマー。
 
-## Producer
+## Producer extends
 プロデューサーはAPIにオブジェクトを提供する引数。`extends`を使うべき。
 例えば、`Number`のリストを消費できる関数なら、
 `Integer`や`Double`のリストも消費できるべき。
@@ -22,17 +22,24 @@ public static void printNumbers(Collection<? extends Number> collection) {
 }
 ```
 
-## Consumer
+## Consumer super
 コンシューマーはAPIからオブジェクトを受け取る引数。`super`を使うべき。
 ```java
-// このように実装しておくと
-public <E> void popAll(Collection<? super E> dst) { ... }
+public static void main(String[] args) {
+    List<Number> numbers = new ArrayList<>();
+    List<Object> objects = new ArrayList<>();
 
-// こう使える
-Stack<Number> numberStack = new Stack<>();
-Collection<Object> objectsHolder = ... ;
+    addNumbers(numbers);
+    addNumbers(objects);
 
-numberStack.popAll(objectsHolder);
+    System.out.println(numbers); // Outputs: [1, 2]
+    System.out.println(objects); // Outputs: [1, 2]
+}
+
+public static void addNumbers(Collection<? super Integer> collection) {
+    collection.add(1);
+    collection.add(2);
+}
 ```
 
 ## PECS
