@@ -2,15 +2,24 @@
 
 ## Producer
 プロデューサーはAPIにオブジェクトを提供する引数。`extends`を使うべき。
+例えば、`Number`のリストを消費できる関数なら、
+`Integer`や`Double`のリストも消費できるべき。
+
+以下の例ではリストの中身を画面出力している。
 ```java
-// このように実装しておくと
-public <E> void pushAll(Iterable<? extends E> src) { ... }
+public static void main(String[] args) {
+    Collection<Integer> integers = Arrays.asList(1, 2, 3);
+    Collection<Double> doubles = Arrays.asList(1.1, 2.2, 3.3);
 
-// こう使える
-Stack<Number> numberStack = new Stack<>();
-Iterable<Integer> integers = ... ;
+    printNumbers(integers);
+    printNumbers(doubles);
+}
 
-numberStack.pushAll(integers);
+public static void printNumbers(Collection<? extends Number> collection) {
+    for (Number number : collection) {
+        System.out.println(number);
+    }
+}
 ```
 
 ## Consumer
