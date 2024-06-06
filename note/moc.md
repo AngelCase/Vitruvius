@@ -85,6 +85,7 @@
 
 ## React / Next.js
 [[React_hooks]]
+[[Reactメモ]]
 
 ## CSS
 [[marginとpaddingの違い]]
@@ -92,6 +93,7 @@
 ## JavaScript / TypeScript
 ### 学び
 [[JavaScript本格入門]]
+[[TypeScriptメモ]]
 ### 言語仕様
 [[Promiseとasync_await]]
 [[ホイスティング]]
