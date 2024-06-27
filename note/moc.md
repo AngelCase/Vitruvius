@@ -1,5 +1,6 @@
 ## デザインパターン
 [[Game Programming Patterns]]
+[[Factory_とAbstract_Factory]]
 
 ## アーキテクチャ
 [[依存性逆転の法則]]
@@ -68,6 +69,7 @@
 ## Python
 [[Python_else]]
 [[Python_リスト内包表記]]
+[[Python_pass]]
 
 ## Haskell
 [[Learn_You_a_Haskell_for_Great_Good!]]
