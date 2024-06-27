@@ -48,6 +48,7 @@ public class FactoryPatternDemo {
 
 ## Factory Method
 1種類のオブジェクトのみを生成できるファクトリークラスを持つ。
+Factoryと違って、1種類のオブジェクトのみなのでどんどんファクトリーが増える。
 ```java
 interface Product {
     void use();
