@@ -96,6 +96,7 @@
 ### 学び
 [[JavaScript本格入門]]
 [[TypeScriptメモ]]
+[[ユニオン型配列でArray.prototype.includesを使う際の注意]]
 ### 言語仕様
 [[Promiseとasync_await]]
 [[ホイスティング]]
