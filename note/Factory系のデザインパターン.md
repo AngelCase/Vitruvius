@@ -102,7 +102,7 @@ public class FactoryMethodPatternDemo {
 ```
 
 ## Abstract Factory
-異なる種類のオブジェクトのファミリーを生成できるファクトリークラスを持つ。
+関連するオブジェクト群（ファミリー）を生成できるファクトリークラスを持つ。
 Factoryと違って、インタフェースを利用している。
 ```java
 interface ProductA {
