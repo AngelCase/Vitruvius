@@ -1,6 +1,6 @@
 ## デザインパターン
 [[Game Programming Patterns]]
-[[Factory_とAbstract_Factory]]
+[[Factory系のデザインパターン]]
 
 ## アーキテクチャ
 [[依存性逆転の法則]]
