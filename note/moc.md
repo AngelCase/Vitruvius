@@ -1,7 +1,7 @@
 ## デザインパターン
 [[Game Programming Patterns]]
 [[Factory系のデザインパターン]]
-[[Value_Objectについての誤解]]
+[[Value_Objectについての言説]]
 
 ## アーキテクチャ
 [[依存性逆転の法則]]
